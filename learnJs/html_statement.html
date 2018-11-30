@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaScript语句</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h3>JavaScript对大小写非常敏感</h3>
+    <p><p>例如:</p>>函数getElementById 与 getElementByID 是不同的</p>
+    <p>同样，变量myVariable与MyVariable也是不同的</p>
+
+    <h3>空格</h3>
+    <p>JavaScript会忽略多余的空格。我们可以向脚本添加空格提高代码的可读性。下面这两行代码是等效的</p>
+    <p> var name = "hello";</p>
+    <p> var name="hello";</p>
+
+    <h3>对代码行进行拆行</h3>
+    <p>document.write("hello \
+            world!");</p>
+    <p>不能向下面这样
+            document.write\
+            ("hello world!");
+    </p>
+
+    <script>
+        var x = 5;
+        var y = x + 6;
+
+        //JavaScript多行注释
+        /*document.write("hello \
+         world!");*/
+    </script>
+
+</body>
+</html>
