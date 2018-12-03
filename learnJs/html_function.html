@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<!-- JavaScript函数 -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaScript函数</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        function showAlert() {
+            alert("Hello World!")
+        }
+        /**
+         * function functionName(){
+         *     这里是需要执行的代码
+         * }
+         */
+        function showAlert(name, job) {
+            alert('my name is ' + name + ' job is ' + job)
+
+        }
+
+        //返回值
+        function getPageInfo() {
+            page = new Object();
+            page.size = "210x297";
+            page.color = "white";
+            page.model = "A4";
+            return page;
+        }
+        function setPageInfo(page) {
+            document.getElementById("page_info").innerHTML = "page info :" + "<br> page size : " + page.size + "<br> page color : " + page.color + " <br> page model : " + page.model;
+        }
+
+        //在仅仅希望是退出函数时，也可使用return语句，返回值是可选的；
+        function getMinNumber(a, b) {
+            if (a == b) {
+                return;//如果是两个值相等则退出函数,否则继续往下执行
+            } else if (a < b) {
+                return a;
+            }
+            return b;
+        }
+        /**
+         * 局部JavaScript变量
+         * 在JavaScript函数内部声明变量(使用var)是局部变量，所以只能在函数内部访问它。(该变量的作用域是局部的)
+         * 可以在不同函数的内部使用相同名称的变量，因为只有声明过该变量的函数才能识别出该变量
+         * 只要函数运行完毕，本地变量就会被删除
+         */
+         
+         /**
+          * 全局变量
+          * 在函数外部声明的变量都是全局变量，网页上所有脚本和函数都能够访问到它
+          */
+
+         /**
+          * JavaScript变量的生存期
+          * 
+          * JavaScript变量的生命周期从它们被声明的时间开始
+          * 局部变量会在函数执行完毕之后被删除
+          * 全局变量会在网页关闭之后被删除
+          */
+
+         /**
+          * 向为声明的JavaScript变量赋值将会被作为全局变量来处理 (牛逼之处)
+          */
+
+
+    </script>
+</head>
+
+<body>
+
+    <p id="page_info"></p>
+
+    <button onclick="showAlert()">点击这里</button>
+    <button onclick="showAlert('zsh','IT')">点击这里1</button>
+    <button onclick="showAlert('matin','script')">点击这里2</button>
+
+    <button onclick="setPageInfo(getPageInfo())">纸张信息</button>
+
+    <button onclick="showAlert('张三',getMinNumber(5,5))">测试退出函数</button> <!--测试结果事实上两数相等其实是返回undefined-->
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaScript基本条件语句</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!-- 测试if条件语句 -->
+    <p id="test_if"></p>
+    <button onclick="testIf()">测试if条件语句</button>
+
+    <!-- 测试switch语句 -->
+    <p id="test_switch"></p>
+    <button onclick="testSwitch()">测试switch条件语句</button>
+
+    <!-- 测试for循环 -->
+    <p id="test_for"></p>
+    <button onclick="testFor2()">测试for循环</button>
+
+    <!-- while 或 do\while 循环都类似于java -->
+    <!-- break 或 continue 关键字 类似java -->
+
+    <script>
+        // 测试if条件语句方法
+        function testIf() {
+            var time = new Date().getHours();
+            var t = undefined;
+            if (time < 20) {
+                t = "Good Day"
+            } else {
+                t = "Good Evening"
+            }
+            document.getElementById("test_if").innerHTML = t;
+        }
+
+        //测试switch语句方法 (显示今日的周名称。请注意 Sunday=0, Monday=1, Tuesday=2, 等等：)
+        function testSwitch() {
+            var day = new Date().getDay();
+            var d = undefined;
+            switch (day) {
+                case 0:
+                    d = "Today it's Sunday"
+                    break;
+                case 1:
+                    d = "Today it's Monday"
+                    break;
+                case 2:
+                    d = "Today it's Tuesday"
+                    break;
+                case 3:
+                    d = "Today it's Wednesday"
+                    break;
+                case 4:
+                    d = "Today it's Thursday"
+                    break;
+                case 5:
+                    d = "Today it's Friday"
+                    break;
+                case 6:
+                    d = "Today it's Saturday"
+                    break;
+                default:
+                    d = "Looking forward to the Weekend"
+                    break;
+            }
+            document.getElementById("test_switch").innerHTML = d;
+        }
+
+        //测试for循环
+        function testFor() {
+            //nums = new Array();
+            nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            var s = "";
+            for (let i = 0; i < nums.length; i++) {
+                s += nums[i] + " <br>";
+            }
+            document.getElementById("test_for").innerHTML = s
+        }
+        function testFor2() {
+            person = { name: "jackson", gender: "man", age: 20 }
+            var s = "";
+            for (key in person) {
+                s += key + " : " + person[key] + "<br>";
+            }
+            document.getElementById("test_for").innerHTML = s
+        }
+
+    </script>
+
+</body>
+
+</html>

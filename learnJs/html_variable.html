@@ -12,6 +12,7 @@
 
     <p id="demo"></p>
 
+
     <script>
         var x = 2;
         var y = 5;
@@ -20,6 +21,56 @@
         // document.write(y + "<br>");
         // document.write(z + "<br>");
         document.getElementById('demo').innerHTML = z
+        
+        // JavaScript类型：字符串、数字、布尔、数组、对象、Null、Undefined
+        // JavaScript字符串
+        var a = "abc";
+        //值得注意的是与java不同的是结束语局不需要分号
+        var b = 'abc'//可以用双引号也可以用单引号
+        var c = 'my name is "def"'//字符串也可以包围引号
+        var d = "my name is 'def'"//字符串也可以包围引号
+
+        //JavaScript数字  --> JavaScript只有一种数字类型。数字可以带小数点也可以不带
+        var e1 = 123;//不使用小数点来写
+        var e2 = 123.999;//使用小数点来写
+        //极小部分使用科学计数法来写
+        var d1 = 123e5;// 12300000
+        var d2 = 123e-5;// 0.00123
+        
+        //JavaScript 布尔类型 --> 跟java一样只有true/false
+        var f1 = true;
+        var f2 = false;
+        
+        //JavaScript 数组 --> 不同于java的是JavaScript不需要定义的太死一个数组三种写法
+        var cars1 = new Array();
+        cars1[0] = 'audi1'
+        cars1[1] = 'audi2'
+        cars1[2] = 'audi3'
+        
+        //或者
+        var cars2 = new Array("audi1","audi2","audi3");
+        //或者
+        var cars3 = ["audi1","audi2","audi3"];
+        
+        //JavaScript 对象 --> 类似于Json对象
+        var person = {firstname:'Michael',lastname:"Jackson",age:20,};
+        var firstname = person.firstname;//直接找属性
+        var lastname = person.lastname;
+        var age = person.age;
+        var name = person["firstname"]//键值对找法
+
+        //undefined 和 null  -->  类似java的是通过null来置空对象，不同的是同样有一样undefined表示对象是空值
+        cars1 = null;
+        cars2 = null;
+        cars3 = null;
+        person = null;
+
+        //声明变量类型  -->  当声明一个变量时，可以使用关键词 new 来声明其类型
+        var carname = new String;
+        var x = new Number;
+        var y = new Boolean;
+        var cars = new Array;
+        var person = new Object;
 
     </script>
 </body>
