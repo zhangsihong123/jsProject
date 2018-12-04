@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaScript表单验证</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!-- JavaScript可用来在数据被送往服务器前对HTML表单中的这些输入数据进行验证 -->
+    <h3>JavaScript表单验证</h3>
+    <!-- 
+        被JavaScript验证的这些典型的表单数据有：
+        1、用户是否已填写表单中的必填项目？
+        2、用户输入的邮件地址是否合法？
+        3、用户是否已输入合法的日期？
+        4、用户是否在数据域(numeric field)中输入了文本？
+     -->
+
+    <form action="html_exception.html" onsubmit="return verifForm(this);" method="POST">
+        Email:<input type="text" name="email" size="30">
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <script>
+
+        function verifEmail(field, errorTxt) {
+            with (field) {
+                apos = value.indexOf("@");
+                dotpos = value.lastIndexOf(".");
+                if (apos < 2 || dotpos - apos < 2) {
+                    alert(errorTxt);
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        }
+
+        function verifForm(thisForm) {
+            with (thisfrom) {
+                if (!verifEmail(email, "Not a valid e-mail address!")) {
+                    email.focus();
+                    return false;
+                }
+            }
+        }
+
+        //这是一个失败的案例
+
+    </script>
+</body>
+
+</html>

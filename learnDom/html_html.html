@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DOM HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <h1 id="h1">Old Header</h1>
+    <p id="p1">Hello World!</p>
+
+    <img src="file:\C:\Users\Administrator\Desktop\lAHPBY0V4uCNFNvMwM0BBw_263_192.gif" id="image">
+
+    <button onclick="changeImg()">改变图片资源</button>
+
+    <script>
+        document.write(Date())
+        //注意：千万不要在文档加载之后使用write方法不然会覆盖整个文档
+
+        //改变HTML内容示例：
+        document.getElementById("p1").innerHTML = "新的文本"
+
+        document.getElementById("h1").innerHTML = "New Header"
+
+        //改变HTML属性
+        function changeImg(){
+            document.getElementById("image").src='file:\\C:\\Users\\Administrator\\Desktop\\lAHPBY0V4t5BwTBkWw_91_100.gif';
+        }
+        
+    </script>
+
+</body>
+
+</html>

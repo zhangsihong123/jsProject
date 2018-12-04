@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DOM 创建新的HTML元素</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div id="div1">
+        <p id="p1">第一段落</p>
+        <p id="p2">第二段落</p>
+    </div>
+    <script type="text/javascript">
+        //创建一个节点
+        var p3 = document.createElement("p");
+        //向节点添加文本
+        var node = document.createTextNode("这是新创建的段落");
+        //向节点追加这个文本节点
+        p3.appendChild(node);
+        
+        //创建一个div标签
+        var div2 = document.createElement("div");
+        //为div标签创建一个文本
+        var divsTxt = document.createTextNode("这是新创建的div");
+        
+        //向div1追加文本子节点
+        div2.appendChild(divsTxt);
+        
+        var div1 = document.getElementById("div1");
+        div1.appendChild(p3);
+
+        //同等级追加节点
+        div1.append(div2);
+
+        //div1移除子节点
+        div1.removeChild(document.getElementById("p1"))
+
+    </script>
+</body>
+</html>

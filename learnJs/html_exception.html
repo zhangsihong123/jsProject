@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaScript异常处理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        function testTry() {
+            try {
+                a()
+            } catch (error) {
+                var txt = "There was an error this page.\n\n";
+                txt += "Error description : " + error.message + "\n\n"
+                txt += "click 确定 to continue";
+                alert(txt);
+            }
+        }
+        
+        //自定义异常可以随便自己定义，catch的异常随你throw出来的类型是一样的
+        function testException() {
+            try {
+                var num = document.getElementById("input_txt").value;
+                if (num == "") throw "empty";
+                if (isNaN(num)) throw "is not number";
+                if (num < 5) throw "too low";
+                if (num > 10) throw "too hight";
+                document.getElementById("error_msg").innerHTML = "";//value is correct
+            } catch (error) {
+                //var e = error.message;
+                document.getElementById("error_msg").innerHTML = "Error : " + error;
+            }
+        
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <input type="button" value="查看错误日志" onclick="testTry()" />
+    <p>Please input a number between 5 and 10:</p>
+    <input id="input_txt" type="text">
+    <button onclick="testException()">检查输入</button>
+    <p id="error_msg"></p>
+</body>
+
+</html>
